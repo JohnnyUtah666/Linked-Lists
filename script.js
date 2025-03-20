@@ -28,6 +28,16 @@ class LinkedList {
         this.size++
     }
 
+    printSize() {
+        let num = 0;
+        let current = this.head;
+        while (current) {
+            num++;
+            current = current.next;
+        }
+        console.log(num);
+    }
+
     printList() {
         let current = this.head;
         while (current) {
