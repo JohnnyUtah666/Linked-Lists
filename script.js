@@ -17,6 +17,17 @@ class LinkedList {
         this.size++
     }
 
+    prepend(value) {
+        const node = new ListNode(value);
+        if (this.isEmpty) {
+            this.head = node
+        } else {
+            node.next = this.head;
+            this.head = node;
+        }
+        this.size++
+    }
+
     printList() {
         let current = this.head;
         while (current) {
@@ -43,7 +54,7 @@ node1.next = node2;
 let list = new LinkedList(node1);
 let btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
-    list.append(Math.random());
+    list.prepend(Math.round(((Math.random()) * 10)));
     list.printList();
 })
 
