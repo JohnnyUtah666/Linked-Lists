@@ -35,7 +35,32 @@ class LinkedList {
             num++;
             current = current.next;
         }
-        console.log(num);
+        console.log("The current length of the linked list is " + num + " nodes");
+    }
+
+    returnFirstNode() {
+        console.log(this.head);
+        return this.head;
+    }
+
+    returnLastNode() {
+        let current = this.head;
+       while (current) {
+        current = current.next;
+        current.next == null ? console.log(current) : null;
+       }
+
+    }
+
+    returnAtIndex(num) {
+        let current = this.head;
+        let counter = 1;
+
+        while (current !== null) {
+            counter === num ? console.log(current) : void 0;
+            counter++;
+            current = current.next;
+        }
     }
 
     printList() {
@@ -64,10 +89,16 @@ node1.next = node2;
 let list = new LinkedList(node1);
 let btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
-    list.prepend(Math.round(((Math.random()) * 10)));
-    list.printList();
+    //list.prepend(Math.round(((Math.random()) * 10) ** 2));
+    //list.printList();
+    list.returnAtIndex(4);
+})
+
+let sizeBtn = document.getElementById("sizeBtn");
+sizeBtn.addEventListener("click", () => {
+    list.printSize();
 })
 
 list.append(6);
 list.append(7);
-
+list.append(8);
