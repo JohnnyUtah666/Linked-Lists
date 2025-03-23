@@ -17,6 +17,24 @@ class LinkedList {
         this.size++
     }
 
+    popNode(head) {
+        if (!head){
+            return null;
+        }
+
+        if (!head.next) {
+            return null;
+        }
+
+        let current = head;
+        while (current.next.next) 
+        current = current.next;
+
+        current.next = null;
+
+        return head;
+    }
+
     prepend(value) {
         const node = new ListNode(value);
         if (this.isEmpty) {
@@ -50,6 +68,17 @@ class LinkedList {
         current.next == null ? console.log(current) : null;
        }
 
+    }
+
+    containsValue(value) {
+        let current = this.head;
+        let counter = 0;
+        while (current) {
+           if (value === current.data) {counter++;} 
+            current = current.next;
+        }
+        counter == 1 ? console.log(true) : console.log(false); 
+        
     }
 
     returnAtIndex(num) {
@@ -91,12 +120,13 @@ let btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
     //list.prepend(Math.round(((Math.random()) * 10) ** 2));
     //list.printList();
-    list.returnAtIndex(4);
+    //list.returnAtIndex(4);
+    list.printList();
 })
 
 let sizeBtn = document.getElementById("sizeBtn");
 sizeBtn.addEventListener("click", () => {
-    list.printSize();
+    list.containsValue(8)
 })
 
 list.append(6);
