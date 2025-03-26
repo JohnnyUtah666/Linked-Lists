@@ -108,6 +108,17 @@ class LinkedList {
         }
     }
 
+    listToString() {
+        let current = this.head;
+        let display = "";
+        while (current) {
+            display += current.data + " -> ";
+            current = current.next;
+        }
+        display += "null";
+        console.log(display);
+    }
+
     printList() {
         let current = this.head;
         while (current) {
@@ -143,7 +154,7 @@ btn.addEventListener("click", () => {
 let sizeBtn = document.getElementById("sizeBtn");
 sizeBtn.addEventListener("click", () => {
     //list.containsValue(8)
-    list.returnIndex(8);
+    list.listToString();
 })
 
 list.append(6);
