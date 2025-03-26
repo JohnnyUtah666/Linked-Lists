@@ -81,6 +81,22 @@ class LinkedList {
         
     }
 
+    returnIndex(value) {
+        let current = this.head;
+        let counter = 0;
+        while (current) {
+            counter++;
+            if (value === current.data) {
+                console.log(counter);
+                return;
+            }
+            current = current.next
+        }
+        if (counter == 0) {
+            return null;
+        }
+    }
+
     returnAtIndex(num) {
         let current = this.head;
         let counter = 1;
@@ -126,7 +142,8 @@ btn.addEventListener("click", () => {
 
 let sizeBtn = document.getElementById("sizeBtn");
 sizeBtn.addEventListener("click", () => {
-    list.containsValue(8)
+    //list.containsValue(8)
+    list.returnIndex(8);
 })
 
 list.append(6);
