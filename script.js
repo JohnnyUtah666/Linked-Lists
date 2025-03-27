@@ -143,19 +143,7 @@ node1.next = node2;
 
 
 let list = new LinkedList(node1);
-let btn = document.getElementById("btn");
-btn.addEventListener("click", () => {
-    //list.prepend(Math.round(((Math.random()) * 10) ** 2));
-    //list.printList();
-    //list.returnAtIndex(4);
-    list.printList();
-})
 
-let sizeBtn = document.getElementById("sizeBtn");
-sizeBtn.addEventListener("click", () => {
-    //list.containsValue(8)
-    list.listToString();
-})
 
 list.append(6);
 list.append(7);
